@@ -53,7 +53,7 @@ public class Venta implements Serializable {
     private Integer total;
     @Column(name = "estado")
     private Integer estado;
-    @JoinColumn(name = "rutcliente", referencedColumnName = "rut")
+    @JoinColumn(name = "rutcliente", referencedColumnName = "usuario")
     @ManyToOne
     private Usuario rutcliente;
     @OneToMany(mappedBy = "codigoventa")

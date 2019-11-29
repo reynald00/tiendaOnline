@@ -27,7 +27,7 @@ import javax.xml.bind.annotation.XmlTransient;
 @XmlRootElement
 @NamedQueries({
     @NamedQuery(name = "Usuario.findAll", query = "SELECT u FROM Usuario u"),
-    @NamedQuery(name = "Usuario.findByRut", query = "SELECT u FROM Usuario u WHERE u.rut = :rut"),
+    @NamedQuery(name = "Usuario.findByUsuario", query = "SELECT u FROM Usuario u WHERE u.usuario = :usuario"),
     @NamedQuery(name = "Usuario.findByNombre", query = "SELECT u FROM Usuario u WHERE u.nombre = :nombre"),
     @NamedQuery(name = "Usuario.findByApellido", query = "SELECT u FROM Usuario u WHERE u.apellido = :apellido"),
     @NamedQuery(name = "Usuario.findByEmail", query = "SELECT u FROM Usuario u WHERE u.email = :email"),
@@ -38,8 +38,8 @@ public class Usuario implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @Basic(optional = false)
-    @Column(name = "rut")
-    private String rut;
+    @Column(name = "usuario")
+    private String usuario;
     @Column(name = "nombre")
     private String nombre;
     @Column(name = "apellido")
@@ -56,16 +56,16 @@ public class Usuario implements Serializable {
     public Usuario() {
     }
 
-    public Usuario(String rut) {
-        this.rut = rut;
+    public Usuario(String usuario) {
+        this.usuario = usuario;
     }
 
-    public String getRut() {
-        return rut;
+    public String getUsuario() {
+        return usuario;
     }
 
-    public void setRut(String rut) {
-        this.rut = rut;
+    public void setUsuario(String usuario) {
+        this.usuario = usuario;
     }
 
     public String getNombre() {
@@ -120,7 +120,7 @@ public class Usuario implements Serializable {
     @Override
     public int hashCode() {
         int hash = 0;
-        hash += (rut != null ? rut.hashCode() : 0);
+        hash += (usuario != null ? usuario.hashCode() : 0);
         return hash;
     }
 
@@ -131,7 +131,7 @@ public class Usuario implements Serializable {
             return false;
         }
         Usuario other = (Usuario) object;
-        if ((this.rut == null && other.rut != null) || (this.rut != null && !this.rut.equals(other.rut))) {
+        if ((this.usuario == null && other.usuario != null) || (this.usuario != null && !this.usuario.equals(other.usuario))) {
             return false;
         }
         return true;
@@ -139,7 +139,7 @@ public class Usuario implements Serializable {
 
     @Override
     public String toString() {
-        return "cl.entities.Usuario[ rut=" + rut + " ]";
+        return "cl.entities.Usuario[ usuario=" + usuario + " ]";
     }
     
 }
