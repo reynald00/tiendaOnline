@@ -1,6 +1,6 @@
 <%-- 
-    Document   : index
-    Created on : 23-nov-2019, 20:57:45
+    Document   : usuario
+    Created on : 29-nov-2019, 16:55:50
     Author     : Reynaldo.M
 --%>
 
@@ -19,19 +19,7 @@
     </head>
 
     <body>
-        
-        
-        <nav>
-          <div class="nav-wrapper">
-            <a href="index.jsp" class="brand-logo">Logo</a>
-            <ul id="nav-mobile" class="right hide-on-med-and-down">
-              <li><a href="categoria.jsp">Categorias</a></li>
-              <li><a href="producto.jsp">Producto</a></li>
-              <li><a href="usuario.jsp">Usuario</a></li>
-            </ul>
-          </div>
-        </nav>
-        
+
       <!--JavaScript at end of body for optimized loading-->
       <script type="text/javascript" src="js/materialize.min.js"></script>
     </body>
