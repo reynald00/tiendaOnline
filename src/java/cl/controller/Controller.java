@@ -39,8 +39,37 @@ public class Controller extends HttpServlet {
           case "editcat":
               editcat(request, response);
               break;
+           case "adduser":
+              adduser(request, response);
+              break;
       }
     }
+    protected void adduser(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        
+        String usuario = request.getParameter("usuario");
+        String nombre = request.getParameter("nombre");
+        String apellido = request.getParameter("apellido");
+        String correo = request.getParameter("correo");
+        String clave = request.getParameter("clave");
+        String tipo = request.getParameter("tipo");
+      
+      if (servicio.buscarUsuario(usuario)==null) {
+        Usuario newuser = new Usuario();
+        newuser.setUsuario(usuario);
+        newuser.setNombre(nombre);
+        newuser.setApellido(apellido);
+        newuser.setEmail(correo);
+        newuser.setTipo(tipo);
+        newuser.setClave(Hash.md5(clave));
+        servicio.insertar(newuser);
+        response.sendRedirect("usuario.jsp");
+      }else{
+          request.setAttribute("msg", "Usuario ya existe");
+          request.getRequestDispatcher("usuario.jsp").forward(request, response);
+      }
+    }
+    
     protected void addcat(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
       String nombre = request.getParameter("nombre");

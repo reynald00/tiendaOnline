@@ -38,6 +38,7 @@
         
         <div class="row">
             <div class="col s6">
+                <h4>Categorías</h4>
                 <form action="control.do" method="POST">
                   <div class="input-field">
                       <input id="nombre" type="text" name="nombre">

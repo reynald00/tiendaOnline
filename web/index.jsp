@@ -26,8 +26,8 @@
             <a href="index.jsp" class="brand-logo">Logo</a>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
               <li><a href="categoria.jsp">Categorias</a></li>
-              <li><a href="producto.jsp">Producto</a></li>
-              <li><a href="usuario.jsp">Usuario</a></li>
+              <li><a href="producto.jsp">Productos</a></li>
+              <li><a href="usuario.jsp">Usuarios</a></li>
             </ul>
           </div>
         </nav>
